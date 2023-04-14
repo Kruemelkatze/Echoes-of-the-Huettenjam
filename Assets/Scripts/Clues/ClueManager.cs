@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class ClueManager : MonoBehaviour
+namespace Clues
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ClueManager : Singleton<ClueManager>
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+        }
     }
 }
