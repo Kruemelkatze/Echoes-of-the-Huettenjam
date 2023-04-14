@@ -1,9 +1,11 @@
-﻿using UnityEditor;
+﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameController : Singleton<GameController>
 {
@@ -15,10 +17,13 @@ public class GameController : Singleton<GameController>
     [SerializeField] private GameObject clueUi;
     [SerializeField] private FirstPersonController firstPersonController;
 
+
     [Header("Game State Properties")]
     [SerializeField] private int gameDurationS = 60;
+    [SerializeField] private TextMeshProUGUI gameTimeMesh;
     float gameTimer = 0.0f;
     private bool hasTriggeredRespawnOnce = false;
+    private bool hasStartedMoving = false;
 
     public GameState GameState => gameState;
 
@@ -26,6 +31,7 @@ public class GameController : Singleton<GameController>
 
     private void Awake()
     {
+        gameTimeMesh.text = "";
         if (!ThisIsTheSingletonInstance())
         {
             return;
@@ -111,10 +117,14 @@ public class GameController : Singleton<GameController>
 
     private void HandleGameTime()
     {
+        if (!hasStartedMoving && firstPersonController.isMoving) hasStartedMoving = true;
+
+        if (!hasStartedMoving) return;
 
         gameTimer += Time.deltaTime;
         int seconds = (int) gameTimer;
         // Debug.Log(seconds);
+        gameTimeMesh.text = (gameDurationS - seconds).ToString();
 
         if (!hasTriggeredRespawnOnce && (seconds >= gameDurationS)) {
             SceneController.Instance.RestartScene(true);
