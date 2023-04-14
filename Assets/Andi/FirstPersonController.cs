@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FirstPersonController : MonoBehaviour
 {
-    public bool CanMove { get; private set; } = true;
+    public bool CanMove { get; set; } = true;
 
     [Header("Functional Options")]
     [SerializeField] private bool canUseHeadbob = true;

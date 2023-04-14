@@ -9,7 +9,10 @@ public class GameController : Singleton<GameController>
 
     [Header("UI")] [SerializeField] private GameObject gameUi;
     [SerializeField] private GameObject pauseUi;
-    
+
+    [SerializeField] private GameObject clueUi;
+    [SerializeField] private FirstPersonController firstPersonController;
+
     public GameState GameState => gameState;
 
     private GameState _prePauseState = GameState.Starting;
@@ -30,6 +33,8 @@ public class GameController : Singleton<GameController>
 
         // Do load Stuff
         gameState = GameState.Playing;
+        
+        SetPause(false);
     }
 
     private void Update()
@@ -37,6 +42,13 @@ public class GameController : Singleton<GameController>
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             SetPause(gameState != GameState.Paused);
+        }
+
+        if (firstPersonController && clueUi)
+        {
+            firstPersonController.CanMove = !clueUi.activeInHierarchy;
+            Cursor.visible = clueUi.activeInHierarchy;
+            Cursor.lockState = Cursor.visible ? CursorLockMode.None : CursorLockMode.Locked;
         }
     }
 
@@ -72,6 +84,11 @@ public class GameController : Singleton<GameController>
         if (pauseUi)
         {
             pauseUi.SetActive(paused);
+        }
+
+        if (clueUi)
+        {
+            clueUi.SetActive(paused);
         }
 
         // Stopping time depends on your game! Turn-based games maybe don't need this
