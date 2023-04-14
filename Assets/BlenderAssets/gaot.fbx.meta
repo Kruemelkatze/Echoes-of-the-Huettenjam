@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 96f3f159caa59e6488d7e97a63ab44a5
+guid: 4e7921033e26f664bbe5c90760340d96
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: white-goat-001
+    second: {fileID: 2100000, guid: 01cbf1f54dc020346861f335f57cf0c8, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: white-goat-001
+    second: {fileID: 2800000, guid: 3c0a5345b524052448b96ba2677efc7a, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
