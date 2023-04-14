@@ -24,6 +24,7 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private float walkBobAmount = 0.05f;
     private float bobDefaultYPos = 0;
     private float bobTimer;
+    private bool stepTaken = false;
 
     private Camera playerCamera;
     private CharacterController characterController;
@@ -69,13 +70,25 @@ public class FirstPersonController : MonoBehaviour
             return;
         }
 
-        if (Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1) {
+        if (Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1f) {
             bobTimer += Time.deltaTime * walkBobSpeed;
+            // Debug.Log(Mathf.Sin(bobTimer));
             playerCamera.transform.localPosition = new Vector3(
                 playerCamera.transform.localPosition.x,
                 bobDefaultYPos + Mathf.Sin(bobTimer) * walkBobAmount,
                 playerCamera.transform.localPosition.z
             );
+
+            // player steps:
+            if (Mathf.Sin(bobTimer) <= -0.99f && !stepTaken) {
+                // player head is near lowest point -> play step sound once
+                AudioController.Instance.PlaySound("click");
+                stepTaken = true;
+            }
+            if (Mathf.Sin(bobTimer) >= 0.99f) {
+                // reset step taken for next sound
+                stepTaken = false;
+            }
         }
     }
 
