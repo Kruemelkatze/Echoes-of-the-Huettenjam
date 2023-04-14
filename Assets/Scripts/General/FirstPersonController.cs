@@ -6,6 +6,7 @@ using UnityEngine;
 public class FirstPersonController : MonoBehaviour
 {
     public bool CanMove { get; set; } = true;
+    public bool isMoving{ get; set; } = false;
 
     [Header("Functional Options")]
     [SerializeField] private bool canUseHeadbob = true;
@@ -111,6 +112,9 @@ public class FirstPersonController : MonoBehaviour
 
     private void HandleMovementInput()
     {
+        if (Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1f) isMoving = true;
+        else isMoving = false;
+
         currentInput = new Vector2(walkSpeed * Input.GetAxis("Vertical"), walkSpeed * Input.GetAxis("Horizontal"));
         float moveDirectionY = moveDirection.y;
         moveDirection = (transform.TransformDirection(Vector3.forward) * currentInput.x) + (transform.TransformDirection(Vector3.right) * currentInput.y);

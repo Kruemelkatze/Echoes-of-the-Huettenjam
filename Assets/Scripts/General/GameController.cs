@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System;
+using UnityEngine.SceneManagement;
 
 public class GameController : Singleton<GameController>
 {
@@ -12,6 +14,11 @@ public class GameController : Singleton<GameController>
 
     [SerializeField] private GameObject clueUi;
     [SerializeField] private FirstPersonController firstPersonController;
+
+    [Header("Game State Properties")]
+    [SerializeField] private int gameDurationS = 60;
+    float gameTimer = 0.0f;
+    private bool hasTriggeredRespawnOnce = false;
 
     public GameState GameState => gameState;
 
@@ -33,12 +40,14 @@ public class GameController : Singleton<GameController>
 
         // Do load Stuff
         gameState = GameState.Playing;
-        
+
         SetPause(false);
     }
 
     private void Update()
     {
+        HandleGameTime();
+
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             SetPause(gameState != GameState.Paused);
@@ -51,6 +60,8 @@ public class GameController : Singleton<GameController>
             Cursor.lockState = Cursor.visible ? CursorLockMode.None : CursorLockMode.Locked;
         }
     }
+
+
 
     //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PUBLIC  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     public void PauseGame() => SetPause(true);
@@ -96,6 +107,19 @@ public class GameController : Singleton<GameController>
 
         // Whatever else there is to do...
         // Deactivate other UI, etc.
+    }
+
+    private void HandleGameTime()
+    {
+
+        gameTimer += Time.deltaTime;
+        int seconds = (int) gameTimer;
+        // Debug.Log(seconds);
+
+        if (!hasTriggeredRespawnOnce && (seconds >= gameDurationS)) {
+            SceneController.Instance.RestartScene(true);
+            hasTriggeredRespawnOnce = true;
+        }
     }
 
 #if UNITY_EDITOR
