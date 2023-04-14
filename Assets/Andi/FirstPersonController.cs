@@ -40,7 +40,7 @@ public class FirstPersonController : MonoBehaviour
         {
             HandleMovementInput();
 
-            // HandleMouseLook();
+            HandleMouseLook();
 
             ApplyFinalMovements();
         }
@@ -57,7 +57,10 @@ public class FirstPersonController : MonoBehaviour
 
     private void HandleMouseLook()
     {
-        throw new NotImplementedException();
+        rotationX -= Input.GetAxis("Mouse Y") * lookSpeedY;
+        rotationX = Mathf.Clamp(rotationX, -upperLookLimit, lowerLookLimit);
+        playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeedX, 0);
     }
 
     private void HandleMovementInput()
