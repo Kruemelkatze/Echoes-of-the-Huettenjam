@@ -74,7 +74,7 @@ public class SceneController : PersistentSingleton<SceneController>
     public void LoadScene(string sceneName)
     {
         Instance.simpleFadeFast.SetLabel("");
-        Instance.StartCoroutine(LoadSceneCoroutine(Instance.holeShrink, sceneName));
+        Instance.StartCoroutine(LoadSceneCoroutine(Instance.simpleFadeFast, sceneName));
     }
 
     /// <summary>o
@@ -85,21 +85,21 @@ public class SceneController : PersistentSingleton<SceneController>
     public void LoadScene(string sceneName, bool isRespawn = false)
     {
         Instance.simpleFadeFast.SetLabel("");
-        Instance.StartCoroutine(LoadSceneCoroutine(Instance.holeShrink, sceneName, isRespawn));
+        Instance.StartCoroutine(LoadSceneCoroutine(Instance.simpleFadeFast, sceneName, isRespawn));
     }
 
     [UsedImplicitly]
     public IEnumerator LoadSceneAsync(string sceneName)
     {
         Instance.simpleFadeFast.SetLabel("");
-        yield return Instance.StartCoroutine(LoadSceneCoroutine(Instance.holeShrink, sceneName));
+        yield return Instance.StartCoroutine(LoadSceneCoroutine(Instance.simpleFadeFast, sceneName));
     }
 
     [UsedImplicitly]
     public void LoadScene(string sceneName, string sceneLabel)
     {
         Instance.simpleFadeSlowWithLabel.SetLabel(sceneLabel);
-        Instance.StartCoroutine(LoadSceneCoroutine(Instance.holeShrink, sceneName));
+        Instance.StartCoroutine(LoadSceneCoroutine(Instance.simpleFadeFast, sceneName));
     }
 
     [UsedImplicitly]
@@ -108,7 +108,7 @@ public class SceneController : PersistentSingleton<SceneController>
         // todo: stop Sound effect bus
         string sceneName = SceneManager.GetSceneAt(id).name;
         Instance.simpleFadeFast.SetLabel("");
-        Instance.StartCoroutine(LoadSceneCoroutine(Instance.holeShrink, sceneName));
+        Instance.StartCoroutine(LoadSceneCoroutine(Instance.simpleFadeFast, sceneName));
     }
 
     [UsedImplicitly]
