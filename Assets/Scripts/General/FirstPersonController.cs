@@ -6,22 +6,26 @@ using UnityEngine;
 public class FirstPersonController : MonoBehaviour
 {
     public bool CanMove { get; set; } = true;
-    public bool isMoving{ get; set; } = false;
+    public bool isMoving { get; set; } = false;
 
-    [Header("Functional Options")]
-    [SerializeField] private bool canUseHeadbob = true;
+    [Header("Functional Options")] [SerializeField]
+    private bool canUseHeadbob = true;
 
-    [Header("Movement Parameters")]
-    [SerializeField] private float walkSpeed = 3.0f;
+    [Header("Movement Parameters")] [SerializeField]
+    private float walkSpeed = 3.0f;
+
     [SerializeField] private float gravity = 30.0f;
-    [Header("Look Parameters")]
-    [SerializeField, Range(1, 10)] private float lookSpeedX = 2.0f;
+
+    [Header("Look Parameters")] [SerializeField, Range(1, 10)]
+    private float lookSpeedX = 2.0f;
+
     [SerializeField, Range(1, 10)] private float lookSpeedY = 2.0f;
     [SerializeField, Range(1, 180)] private float upperLookLimit = 80.0f;
     [SerializeField, Range(1, 180)] private float lowerLookLimit = 80.0f;
 
-    [Header("Headbob Parameters")]
-    [SerializeField] private float walkBobSpeed = 14.0f;
+    [Header("Headbob Parameters")] [SerializeField]
+    private float walkBobSpeed = 14.0f;
+
     [SerializeField] private float walkBobAmount = 0.05f;
     private float bobDefaultYPos = 0;
     private float bobTimer;
@@ -34,6 +38,8 @@ public class FirstPersonController : MonoBehaviour
     private Vector2 currentInput;
     private float rotationX = 0;
 
+    private GameObject _previousLookedAtObject = null;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -42,7 +48,6 @@ public class FirstPersonController : MonoBehaviour
         bobDefaultYPos = playerCamera.transform.localPosition.y;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
     }
 
     // Update is called once per frame
@@ -60,8 +65,9 @@ public class FirstPersonController : MonoBehaviour
             }
 
             ApplyFinalMovements();
-        }
 
+            HandleLookingAtThings();
+        }
     }
 
     private void HandleHeadbob()
@@ -71,7 +77,8 @@ public class FirstPersonController : MonoBehaviour
             return;
         }
 
-        if (Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1f) {
+        if (Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1f)
+        {
             bobTimer += Time.deltaTime * walkBobSpeed;
             // Debug.Log(Mathf.Sin(bobTimer));
             playerCamera.transform.localPosition = new Vector3(
@@ -81,12 +88,15 @@ public class FirstPersonController : MonoBehaviour
             );
 
             // player steps:
-            if (Mathf.Sin(bobTimer) <= -0.99f && !stepTaken) {
+            if (Mathf.Sin(bobTimer) <= -0.99f && !stepTaken)
+            {
                 // player head is near lowest point -> play step sound once
-                AudioController.Instance.PlaySound("click");
+                AudioController.Instance.PlaySound("steps_snow");
                 stepTaken = true;
             }
-            if (Mathf.Sin(bobTimer) >= 0.99f) {
+
+            if (Mathf.Sin(bobTimer) >= 0.99f)
+            {
                 // reset step taken for next sound
                 stepTaken = false;
             }
@@ -99,6 +109,7 @@ public class FirstPersonController : MonoBehaviour
         {
             moveDirection.y -= gravity * Time.deltaTime;
         }
+
         characterController.Move(moveDirection * Time.deltaTime);
     }
 
@@ -117,7 +128,38 @@ public class FirstPersonController : MonoBehaviour
 
         currentInput = new Vector2(walkSpeed * Input.GetAxis("Vertical"), walkSpeed * Input.GetAxis("Horizontal"));
         float moveDirectionY = moveDirection.y;
-        moveDirection = (transform.TransformDirection(Vector3.forward) * currentInput.x) + (transform.TransformDirection(Vector3.right) * currentInput.y);
+        moveDirection = (transform.TransformDirection(Vector3.forward) * currentInput.x) +
+                        (transform.TransformDirection(Vector3.right) * currentInput.y);
         moveDirection.y = moveDirectionY;
+    }
+
+    private void HandleLookingAtThings()
+    {
+        if (!Physics.Raycast(transform.position, transform.forward, out var hit, Mathf.Infinity))
+            return;
+
+        var obj = hit.collider.gameObject;
+        if (_previousLookedAtObject == obj)
+            return;
+
+        if (_previousLookedAtObject)
+        {
+            var previousOutline = _previousLookedAtObject.GetComponent<Outline>();
+            if (previousOutline)
+            {
+                previousOutline.enabled = false;
+                _previousLookedAtObject = null;
+            }
+        }
+
+        if (!obj)
+            return;
+
+        var outline = obj.GetComponent<Outline>();
+        if (outline)
+        {
+            outline.enabled = true;
+            _previousLookedAtObject = obj;
+        }
     }
 }

@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 public class DraggableClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     [SerializeField] private TextMeshProUGUI tmp;
-    private string text;
     private Vector3 startPosition;
+    private Transform startParent;
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
@@ -16,21 +16,15 @@ public class DraggableClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     public bool PositioningHandled { get; set; }
     public bool IgnoreDrop { get; set; }
 
-    public string Text => text = tmp.text;
+    public string Text => tmp.text;
 
     // Start is called before the first frame update
     void Start()
     {
-        text = tmp.text;
-        canvas = GetComponentInParent<Canvas>();
         rectTransform = GetComponent<RectTransform>();
         startPosition = rectTransform.anchoredPosition;
+        startParent = transform.parent;
         canvasGroup = GetComponent<CanvasGroup>();
-    }
-
-    private void OnValidate()
-    {
-        text = tmp.text;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -43,11 +37,27 @@ public class DraggableClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
         PositioningHandled = false;
         IgnoreDrop = false;
         canvasGroup.blocksRaycasts = false;
+        
+        transform.SetParent(startParent);
+        canvas = GetComponentInParent<Canvas>();
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         canvasGroup.blocksRaycasts = true;
+
+        if (InstalledIn)
+        {
+            transform.SetParent(InstalledIn.transform);
+        }
+        else
+        {
+            transform.SetParent(startParent);
+        }
+
+        canvas = GetComponentInParent<Canvas>();
+
+
         if (PositioningHandled || IgnoreDrop)
             return;
 
