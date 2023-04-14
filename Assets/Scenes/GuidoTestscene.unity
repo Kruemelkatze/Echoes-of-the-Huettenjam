@@ -867,6 +867,8 @@ MonoBehaviour:
   gameState: 0
   gameUi: {fileID: 920992608}
   pauseUi: {fileID: 2061289879}
+  clueUi: {fileID: 0}
+  firstPersonController: {fileID: 0}
 --- !u!1001 &1970861664
 PrefabInstance:
   m_ObjectHideFlags: 0
