@@ -83,7 +83,7 @@ public class FirstPersonController : MonoBehaviour
             // player steps:
             if (Mathf.Sin(bobTimer) <= -0.99f && !stepTaken) {
                 // player head is near lowest point -> play step sound once
-                AudioController.Instance.PlaySound("click");
+                AudioController.Instance.PlaySound("steps_snow");
                 stepTaken = true;
             }
             if (Mathf.Sin(bobTimer) >= 0.99f) {
