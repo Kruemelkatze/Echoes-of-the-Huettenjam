@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
@@ -19,6 +20,7 @@ public class GameController : Singleton<GameController>
     [SerializeField] private int gameDurationS = 60;
     float gameTimer = 0.0f;
     private bool hasTriggeredRespawnOnce = false;
+    private bool hasStartedMoving = false;
 
     public GameState GameState => gameState;
 
@@ -111,10 +113,13 @@ public class GameController : Singleton<GameController>
 
     private void HandleGameTime()
     {
+        if (!hasStartedMoving && firstPersonController.isMoving) hasStartedMoving = true;
+
+        if (!hasStartedMoving) return;
 
         gameTimer += Time.deltaTime;
         int seconds = (int) gameTimer;
-        // Debug.Log(seconds);
+        Debug.Log(seconds);
 
         if (!hasTriggeredRespawnOnce && (seconds >= gameDurationS)) {
             SceneController.Instance.RestartScene(true);
