@@ -40,6 +40,9 @@ public class FirstPersonController : MonoBehaviour
 
     private GameObject _previousLookedAtObject = null;
 
+    [SerializeField] private float highlightDistance = 6.0f;
+
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -135,24 +138,19 @@ public class FirstPersonController : MonoBehaviour
 
     private void HandleLookingAtThings()
     {
-        if (!Physics.Raycast(transform.position, transform.forward, out var hit, Mathf.Infinity))
+        if (!Physics.Raycast(transform.position, transform.forward, out var hit, highlightDistance))
+        {
+            UnhighlightObject();
             return;
+        }
 
         var obj = hit.collider.gameObject;
         if (_previousLookedAtObject == obj)
             return;
 
-        if (_previousLookedAtObject)
-        {
-            var previousOutline = _previousLookedAtObject.GetComponent<Outline>();
-            if (previousOutline)
-            {
-                previousOutline.enabled = false;
-                _previousLookedAtObject = null;
-            }
-        }
+        UnhighlightObject();
 
-        if (!obj)
+        if (!obj || hit.distance > highlightDistance)
             return;
 
         var outline = obj.GetComponent<Outline>();
@@ -160,6 +158,19 @@ public class FirstPersonController : MonoBehaviour
         {
             outline.enabled = true;
             _previousLookedAtObject = obj;
+        }
+    }
+
+    private void UnhighlightObject()
+    {
+        if (!_previousLookedAtObject)
+            return;
+
+        var previousOutline = _previousLookedAtObject.GetComponent<Outline>();
+        if (previousOutline)
+        {
+            previousOutline.enabled = false;
+            _previousLookedAtObject = null;
         }
     }
 }
