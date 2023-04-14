@@ -119,7 +119,7 @@ public class GameController : Singleton<GameController>
 
         gameTimer += Time.deltaTime;
         int seconds = (int) gameTimer;
-        Debug.Log(seconds);
+        // Debug.Log(seconds);
 
         if (!hasTriggeredRespawnOnce && (seconds >= gameDurationS)) {
             SceneController.Instance.RestartScene(true);
