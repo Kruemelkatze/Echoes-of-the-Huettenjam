@@ -7,6 +7,9 @@ public class FirstPersonController : MonoBehaviour
 {
     public bool CanMove { get; private set; } = true;
 
+    [Header("Functional Options")]
+    [SerializeField] private bool canUseHeadbob = true;
+
     [Header("Movement Parameters")]
     [SerializeField] private float walkSpeed = 3.0f;
     [SerializeField] private float gravity = 30.0f;
@@ -15,6 +18,12 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField, Range(1, 10)] private float lookSpeedY = 2.0f;
     [SerializeField, Range(1, 180)] private float upperLookLimit = 80.0f;
     [SerializeField, Range(1, 180)] private float lowerLookLimit = 80.0f;
+
+    [Header("Headbob Parameters")]
+    [SerializeField] private float walkBobSpeed = 14.0f;
+    [SerializeField] private float walkBobAmount = 0.05f;
+    private float bobDefaultYPos = 0;
+    private float bobTimer;
 
     private Camera playerCamera;
     private CharacterController characterController;
@@ -28,6 +37,7 @@ public class FirstPersonController : MonoBehaviour
     {
         playerCamera = GetComponentInChildren<Camera>();
         characterController = GetComponent<CharacterController>();
+        bobDefaultYPos = playerCamera.transform.localPosition.y;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -42,14 +52,37 @@ public class FirstPersonController : MonoBehaviour
 
             HandleMouseLook();
 
+            if (canUseHeadbob)
+            {
+                HandleHeadbob();
+            }
+
             ApplyFinalMovements();
         }
 
     }
 
+    private void HandleHeadbob()
+    {
+        if (!characterController.isGrounded)
+        {
+            return;
+        }
+
+        if (Mathf.Abs(moveDirection.x) > 0.1f || Mathf.Abs(moveDirection.z) > 0.1) {
+            bobTimer += Time.deltaTime * walkBobSpeed;
+            playerCamera.transform.localPosition = new Vector3(
+                playerCamera.transform.localPosition.x,
+                bobDefaultYPos + Mathf.Sin(bobTimer) * walkBobAmount,
+                playerCamera.transform.localPosition.z
+            );
+        }
+    }
+
     private void ApplyFinalMovements()
     {
-        if (!characterController.isGrounded) {
+        if (!characterController.isGrounded)
+        {
             moveDirection.y -= gravity * Time.deltaTime;
         }
         characterController.Move(moveDirection * Time.deltaTime);
