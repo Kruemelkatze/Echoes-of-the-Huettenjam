@@ -40,7 +40,7 @@ public class FirstPersonController : MonoBehaviour
         {
             HandleMovementInput();
 
-            HandleMouseLook();
+            // HandleMouseLook();
 
             ApplyFinalMovements();
         }
