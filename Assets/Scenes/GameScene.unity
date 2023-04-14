@@ -1364,6 +1364,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1978252977}
     m_Modifications:
+    - target: {fileID: 642101928, guid: 8fb25459beec1e54080b1da2480cf77f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642147372, guid: 8fb25459beec1e54080b1da2480cf77f, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2712965382737677166, guid: 8fb25459beec1e54080b1da2480cf77f, type: 3}
       propertyPath: m_Name
       value: Mathias
@@ -1719,6 +1727,7 @@ MonoBehaviour:
   pauseUi: {fileID: 2061289879}
   clueUi: {fileID: 0}
   firstPersonController: {fileID: 0}
+  gameDurationS: 60
 --- !u!1 &1912569576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,6 +2547,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1978252977}
     m_Modifications:
+    - target: {fileID: 642101928, guid: 8fb25459beec1e54080b1da2480cf77f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642147372, guid: 8fb25459beec1e54080b1da2480cf77f, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2712965382737677166, guid: 8fb25459beec1e54080b1da2480cf77f, type: 3}
       propertyPath: m_Name
       value: Draggable Clue
