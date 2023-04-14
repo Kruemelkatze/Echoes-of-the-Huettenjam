@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using System;
-using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class GameController : Singleton<GameController>
 {
@@ -17,9 +15,11 @@ public class GameController : Singleton<GameController>
     [SerializeField] private GameObject clueUi;
     [SerializeField] private FirstPersonController firstPersonController;
 
+    [SerializeField] private AnimationCurve vignetteAnimationCurve;
 
-    [Header("Game State Properties")]
-    [SerializeField] private int gameDurationS = 60;
+    [Header("Game State Properties")] [SerializeField]
+    private int gameDurationS = 60;
+
     [SerializeField] private TextMeshProUGUI gameTimeMesh;
     float gameTimer = 0.0f;
     private bool hasTriggeredRespawnOnce = false;
@@ -29,9 +29,19 @@ public class GameController : Singleton<GameController>
 
     private GameState _prePauseState = GameState.Starting;
 
+    private Volume _volume;
+    private Vignette _vignette;
+
     private void Awake()
     {
-        gameTimeMesh.text = "";
+        _volume = FindObjectOfType<Volume>();
+        if (_volume)
+        {
+            _volume.profile.TryGet(out _vignette);
+        }
+
+        if (gameTimeMesh)
+            gameTimeMesh.text = "";
         if (!ThisIsTheSingletonInstance())
         {
             return;
@@ -66,7 +76,6 @@ public class GameController : Singleton<GameController>
             Cursor.lockState = Cursor.visible ? CursorLockMode.None : CursorLockMode.Locked;
         }
     }
-
 
 
     //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PUBLIC  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -122,11 +131,18 @@ public class GameController : Singleton<GameController>
         if (!hasStartedMoving) return;
 
         gameTimer += Time.deltaTime;
-        int seconds = (int) gameTimer;
+        int seconds = (int)gameTimer;
         // Debug.Log(seconds);
-        gameTimeMesh.text = (gameDurationS - seconds).ToString();
+        if (gameTimeMesh)
+            gameTimeMesh.text = (gameDurationS - seconds).ToString();
 
-        if (!hasTriggeredRespawnOnce && (seconds >= gameDurationS)) {
+        if (_vignette)
+        {
+            _vignette.intensity.value = vignetteAnimationCurve.Evaluate(gameTimer / gameDurationS);
+        }
+
+        if (!hasTriggeredRespawnOnce && (seconds >= gameDurationS))
+        {
             SceneController.Instance.RestartScene(true);
             hasTriggeredRespawnOnce = true;
         }
