@@ -1247,6 +1247,7 @@ MonoBehaviour:
   pauseUi: {fileID: 2061289879}
   clueUi: {fileID: 418766569}
   firstPersonController: {fileID: 752588401}
+  gameDurationS: 60
 --- !u!224 &1978252977 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1974446145, guid: 5c89e252f1953fc4bbba6f78a8e09880, type: 3}
@@ -1317,7 +1318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7630572567448456471, guid: 144f2491b02b1914fa15bbf82ceb0871, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 144f2491b02b1914fa15bbf82ceb0871, type: 3}
