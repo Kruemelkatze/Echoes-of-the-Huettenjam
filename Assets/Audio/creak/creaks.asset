@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
+  m_Name: creaks
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: abf66cd58cf95bb4da2e47198044c7a5, type: 3}
+  - {fileID: 8300000, guid: f32bbaca56193f34baf4b4f05a23f0cc, type: 3}
+  - {fileID: 8300000, guid: ac5ac869f8c9d35448b0166eae0e0200, type: 3}
+  subtitle: 
+  loop: 0
+  volume: 1
+  pitch: 1
+  volumeVariation: 0
+  pitchVariation: 0
+  useMaxRange: 0
+  maxRange: 10
