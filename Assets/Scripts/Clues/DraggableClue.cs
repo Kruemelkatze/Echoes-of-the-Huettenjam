@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -42,7 +41,7 @@ public class DraggableClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
         PositioningHandled = false;
         IgnoreDrop = false;
         canvasGroup.blocksRaycasts = false;
-        
+
         transform.SetParent(startParent);
         canvas = GetComponentInParent<Canvas>();
     }

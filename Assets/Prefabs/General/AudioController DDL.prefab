@@ -78,9 +78,11 @@ MonoBehaviour:
     - default
     - scary_loop
     - mellow_loop
+    - menu_music
     m_values:
     - {fileID: 0}
     - {fileID: 11400000, guid: 134e4d7c819cd5949825a2ee1c5abb55, type: 2}
+    - {fileID: 11400000, guid: bcbdd69734e0b07468b2a3987f259551, type: 2}
     - {fileID: 11400000, guid: bcbdd69734e0b07468b2a3987f259551, type: 2}
   musicVolume: 0.5
   soundVolume: 0.5

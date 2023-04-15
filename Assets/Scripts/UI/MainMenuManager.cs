@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using General;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -46,6 +47,13 @@ namespace UI
 
             SetupSubMenus();
             HideSubMenus();
+
+            var clueCanvas = Hub.Get<ClueCanvas>();
+            if (clueCanvas)
+            {
+                Hub.Unregister<ClueCanvas>();
+                Destroy(clueCanvas.gameObject);
+            }
         }
 
         private void OnEnable()
