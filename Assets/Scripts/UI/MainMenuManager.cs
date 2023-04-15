@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using General;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -44,8 +45,18 @@ namespace UI
                 AudioController.Instance.PlayMusic(music); // Remove these lines if you do not have our AudioController
             }
 
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
             SetupSubMenus();
             HideSubMenus();
+
+            var clueCanvas = Hub.Get<ClueCanvas>();
+            if (clueCanvas)
+            {
+                Hub.Unregister<ClueCanvas>();
+                Destroy(clueCanvas.gameObject);
+            }
         }
 
         private void OnEnable()

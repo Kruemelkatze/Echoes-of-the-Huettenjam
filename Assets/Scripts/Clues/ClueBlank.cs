@@ -1,5 +1,6 @@
 using System;
 using Extensions;
+using General;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -51,6 +52,8 @@ public class ClueBlank : MonoBehaviour, IDropHandler
 
         var rectTransform = draggableClue.GetComponent<RectTransform>();
         rectTransform.position = GetComponent<RectTransform>().position;
+
+        Hub.Get<ClueCanvas>().CheckCompletion();
     }
 
     public void Remove(DraggableClue clue)

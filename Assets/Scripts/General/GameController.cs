@@ -49,20 +49,24 @@ public class GameController : Singleton<GameController>
         }
     }
 
-    private static int musicIndex = 0;
-    private static int ambienceIndex = 0;
+    private static int musicIndex = -1;
 
     private void Start()
     {
         AudioController.Instance.PlayDefaultMusic();
 
+        if (musicIndex == -1)
+            musicIndex = Random.Range(0, 2);
+
         switch (musicIndex)
         {
             case 0:
-                AudioController.Instance.PlayDefaultMusic();
+                Debug.Log("Playing scary music");
+                AudioController.Instance.PlayMusic("scary_loop");
                 break;
             case 1:
-                AudioController.Instance.PlaySound("scary_loop");
+                Debug.Log("Playing mellow music");
+                AudioController.Instance.PlayMusic("mellow_loop");
                 break;
             default:
                 AudioController.Instance.PlayDefaultMusic();
@@ -70,24 +74,6 @@ public class GameController : Singleton<GameController>
         }
 
         musicIndex = (musicIndex + 1) % 2;
-
-        var loopOptions = new AudioController.AudioOptions()
-        {
-            Loop = true,
-        };
-        switch (ambienceIndex)
-        {
-            case 0:
-                AudioController.Instance.PlaySound("ambience1", loopOptions);
-                break;
-            case 1:
-                AudioController.Instance.PlaySound("ambience2", loopOptions);
-                break;
-            default:
-                break;
-        }
-
-        ambienceIndex = (ambienceIndex + 1) % 2;
 
         var clueCanvas = FindObjectOfType<ClueCanvas>(true);
         if (clueCanvas)
@@ -105,7 +91,8 @@ public class GameController : Singleton<GameController>
     {
         HandleGameTime();
 
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame || Keyboard.current.pKey.wasPressedThisFrame ||
+            Keyboard.current.cKey.wasPressedThisFrame)
         {
             SetPause(gameState != GameState.Paused);
         }
