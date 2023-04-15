@@ -14,6 +14,9 @@ public class Appear : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        
         if (canvasGroup)
         {
             canvasGroup.alpha = 0;

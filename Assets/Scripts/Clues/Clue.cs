@@ -39,7 +39,7 @@ public class Clue : MonoBehaviour
         outline.OutlineMode = Outline.Mode.OutlineVisible;
     }
 
-    public void Interact()
+    public virtual void Interact()
     {
         if (!canBeInteractedWith)
             return;

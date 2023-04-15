@@ -91,7 +91,8 @@ public class GameController : Singleton<GameController>
     {
         HandleGameTime();
 
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame || Keyboard.current.pKey.wasPressedThisFrame ||
+            Keyboard.current.cKey.wasPressedThisFrame)
         {
             SetPause(gameState != GameState.Paused);
         }

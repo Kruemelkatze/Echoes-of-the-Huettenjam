@@ -45,6 +45,9 @@ namespace UI
                 AudioController.Instance.PlayMusic(music); // Remove these lines if you do not have our AudioController
             }
 
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
             SetupSubMenus();
             HideSubMenus();
 

@@ -31,7 +31,7 @@ public class ClueCanvas : MonoBehaviour
         }
     }
 
-    private void Win()
+    public void Win()
     {
         Debug.Log("WIN");
         SceneController.Instance.LoadScene("WinScene");
