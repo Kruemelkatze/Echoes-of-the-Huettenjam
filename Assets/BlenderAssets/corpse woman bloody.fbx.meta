@@ -1,29 +1,9 @@
 fileFormatVersion: 2
-guid: 2e52cf959e6e5ee459a6dccebdb1791b
+guid: eed8efdc69feed54ab2f8c6f36a89f28
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: fabric blue
-    second: {fileID: 2800000, guid: 201c1b89bc801674a9a7aa8cc6968cd9, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: fabric brown
-    second: {fileID: 2800000, guid: 23e952e336eaca240819de6cb351f0ab, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: leather
-    second: {fileID: 2800000, guid: 242f62b11409f86459b873e329aeac9b, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: metal
-    second: {fileID: 2800000, guid: c8e638fa5d0b3954bbc5eaf79b8cae99, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
