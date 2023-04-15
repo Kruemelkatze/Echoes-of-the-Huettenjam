@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class FirstPersonController : MonoBehaviour
     private float rotationX = 0;
 
     private GameObject _previousLookedAtObject = null;
+    private Clue _previousLookedAtClue = null;
 
     [SerializeField] private float highlightDistance = 6.0f;
 
@@ -70,6 +72,7 @@ public class FirstPersonController : MonoBehaviour
             ApplyFinalMovements();
 
             HandleLookingAtThings();
+            HandleInteract();
         }
     }
 
@@ -138,7 +141,11 @@ public class FirstPersonController : MonoBehaviour
 
     private void HandleLookingAtThings()
     {
-        if (!Physics.Raycast(transform.position, transform.forward, out var hit, highlightDistance))
+        // Raycast to screen center
+        Debug.DrawRay(playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)).origin,
+            playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)).direction * highlightDistance, Color.red);
+        if (!Physics.Raycast(playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out var hit,
+                highlightDistance))
         {
             UnhighlightObject();
             return;
@@ -153,11 +160,15 @@ public class FirstPersonController : MonoBehaviour
         if (!obj || hit.distance > highlightDistance)
             return;
 
-        var outline = obj.GetComponent<Outline>();
-        if (outline)
+        _previousLookedAtObject = obj;
+        _previousLookedAtClue = null;
+
+        var clue = obj.GetComponent<Clue>();
+        if (clue)
         {
-            outline.enabled = true;
+            clue.LookedAt = true;
             _previousLookedAtObject = obj;
+            _previousLookedAtClue = clue;
         }
     }
 
@@ -166,11 +177,24 @@ public class FirstPersonController : MonoBehaviour
         if (!_previousLookedAtObject)
             return;
 
-        var previousOutline = _previousLookedAtObject.GetComponent<Outline>();
-        if (previousOutline)
+        if (_previousLookedAtClue)
         {
-            previousOutline.enabled = false;
-            _previousLookedAtObject = null;
+            _previousLookedAtClue.LookedAt = false;
         }
+    }
+
+    private void HandleInteract()
+    {
+        if (!_previousLookedAtClue)
+            return;
+
+        var isPressingInteract = Mouse.current.leftButton.wasPressedThisFrame ||
+                                 Keyboard.current.eKey.wasPressedThisFrame ||
+                                 Keyboard.current.spaceKey.wasPressedThisFrame;
+
+        if (!isPressingInteract)
+            return;
+
+        _previousLookedAtClue.Interact();
     }
 }

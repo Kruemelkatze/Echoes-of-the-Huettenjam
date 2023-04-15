@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6424184022914712841}
   - component: {fileID: 6424184022914712855}
   - component: {fileID: 6424184022914712854}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SoundVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,6 +28,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184024645321915}
   - {fileID: 6424184023111540618}
@@ -37,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -60}
+  m_AnchoredPosition: {x: 519, y: 18}
   m_SizeDelta: {x: 300, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6424184022914712855
@@ -127,7 +128,7 @@ GameObject:
   - component: {fileID: 6424184022997355366}
   - component: {fileID: 6424184022997355364}
   - component: {fileID: 6424184022997355367}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MusicText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,13 +145,14 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6424184024484491281}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 60}
+  m_AnchoredPosition: {x: 24, y: 48}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6424184022997355364
@@ -183,8 +185,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Music
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 038d5d605bad48c4cbb1867aa75b463f, type: 2}
+  m_sharedMaterial: {fileID: 3805512540990800804, guid: 038d5d605bad48c4cbb1867aa75b463f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -208,8 +210,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -262,7 +264,7 @@ GameObject:
   - component: {fileID: 6424184023067613692}
   - component: {fileID: 6424184023067613695}
   - component: {fileID: 6424184023067613694}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,6 +281,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184023444865249}
   m_Father: {fileID: 6424184024278491232}
@@ -348,11 +351,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.20754719, g: 0.18287648, b: 0.18287648, a: 1}
+    m_PressedColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
+    m_SelectedColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -384,7 +387,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1256076113270211671, guid: 144f2491b02b1914fa15bbf82ceb0871, type: 3}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: RestartScene
         m_Mode: 6
         m_Arguments:
@@ -404,7 +407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6424184023111540618}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,6 +424,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184024554224460}
   m_Father: {fileID: 6424184022914712841}
@@ -443,7 +447,7 @@ GameObject:
   - component: {fileID: 6424184023185537700}
   - component: {fileID: 6424184023185537703}
   - component: {fileID: 6424184023185537702}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,6 +464,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184024195376799}
   m_Father: {fileID: 6424184024278491232}
@@ -529,11 +534,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.20754719, g: 0.18287648, b: 0.18287648, a: 1}
+    m_PressedColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
+    m_SelectedColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -565,7 +570,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 5728245550169283007, guid: 84c5626d08ba20e4aa24daae5caf1271, type: 3}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: PlaySoundFromUI
         m_Mode: 5
         m_Arguments:
@@ -587,13 +592,13 @@ GameObject:
   - component: {fileID: 6424184023427461966}
   - component: {fileID: 6424184023427461964}
   - component: {fileID: 6424184023427461967}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PausedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6424184023427461966
 RectTransform:
   m_ObjectHideFlags: 0
@@ -604,6 +609,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6424184024049337844}
   m_RootOrder: 0
@@ -721,7 +727,7 @@ GameObject:
   - component: {fileID: 6424184023444865249}
   - component: {fileID: 6424184023444865263}
   - component: {fileID: 6424184023444865262}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,6 +744,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6424184023067613681}
   m_RootOrder: 0
@@ -777,15 +784,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Restart
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 038d5d605bad48c4cbb1867aa75b463f, type: 2}
+  m_sharedMaterial: {fileID: 3805512540990800804, guid: 038d5d605bad48c4cbb1867aa75b463f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -802,8 +809,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -853,7 +860,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6424184023700672015}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -870,6 +877,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184023824922915}
   m_Father: {fileID: 6424184022914712841}
@@ -891,7 +899,7 @@ GameObject:
   - component: {fileID: 6424184023824922915}
   - component: {fileID: 6424184023824922913}
   - component: {fileID: 6424184023824922912}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -908,6 +916,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6424184023700672015}
   m_RootOrder: 0
@@ -967,7 +976,7 @@ GameObject:
   - component: {fileID: 6424184023996284797}
   - component: {fileID: 6424184023996284796}
   - component: {fileID: 6424184023996284799}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PauseCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,6 +993,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184024049337844}
   m_Father: {fileID: 0}
@@ -1003,7 +1013,7 @@ Canvas:
   m_GameObject: {fileID: 6424184023996284785}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1066,7 +1076,7 @@ GameObject:
   - component: {fileID: 6424184024049337844}
   - component: {fileID: 6424184024049337842}
   - component: {fileID: 6424184024049337845}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1083,6 +1093,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184023427461966}
   - {fileID: 6424184024484491281}
@@ -1090,11 +1101,11 @@ RectTransform:
   m_Father: {fileID: 6424184023996284798}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1200, y: 526}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 960, y: 200}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &6424184024049337842
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1142,7 +1153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6424184024117697665}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,6 +1170,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184024264683241}
   m_Father: {fileID: 6424184024847144534}
@@ -1180,7 +1192,7 @@ GameObject:
   - component: {fileID: 6424184024188815819}
   - component: {fileID: 6424184024188815817}
   - component: {fileID: 6424184024188815816}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1197,6 +1209,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6424184024823470262}
   m_RootOrder: 0
@@ -1255,7 +1268,7 @@ GameObject:
   - component: {fileID: 6424184024195376799}
   - component: {fileID: 6424184024195376797}
   - component: {fileID: 6424184024195376796}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1272,6 +1285,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6424184023185537753}
   m_RootOrder: 0
@@ -1311,15 +1325,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 038d5d605bad48c4cbb1867aa75b463f, type: 2}
+  m_sharedMaterial: {fileID: 3805512540990800804, guid: 038d5d605bad48c4cbb1867aa75b463f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1336,8 +1350,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1389,7 +1403,7 @@ GameObject:
   - component: {fileID: 6424184024264683241}
   - component: {fileID: 6424184024264683255}
   - component: {fileID: 6424184024264683254}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1406,6 +1420,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6424184024117697665}
   m_RootOrder: 0
@@ -1462,7 +1477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6424184024278491232}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1479,6 +1494,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184024864217503}
   - {fileID: 6424184023185537753}
@@ -1488,7 +1504,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 142}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6424184024410265117
@@ -1502,7 +1518,7 @@ GameObject:
   - component: {fileID: 6424184024410265114}
   - component: {fileID: 6424184024410265112}
   - component: {fileID: 6424184024410265115}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1519,6 +1535,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6424184024847144534}
   m_RootOrder: 0
@@ -1575,7 +1592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6424184024484491281}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1592,6 +1609,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184022997355366}
   - {fileID: 6424184024847144534}
@@ -1602,7 +1620,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -270.6667, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6424184024554224463
@@ -1616,7 +1634,7 @@ GameObject:
   - component: {fileID: 6424184024554224460}
   - component: {fileID: 6424184024554224458}
   - component: {fileID: 6424184024554224461}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1633,6 +1651,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6424184023111540618}
   m_RootOrder: 0
@@ -1691,7 +1710,7 @@ GameObject:
   - component: {fileID: 6424184024626656225}
   - component: {fileID: 6424184024626656239}
   - component: {fileID: 6424184024626656238}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1708,6 +1727,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6424184024864217503}
   m_RootOrder: 0
@@ -1747,15 +1767,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 038d5d605bad48c4cbb1867aa75b463f, type: 2}
+  m_sharedMaterial: {fileID: 3805512540990800804, guid: 038d5d605bad48c4cbb1867aa75b463f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1772,8 +1792,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1825,7 +1845,7 @@ GameObject:
   - component: {fileID: 6424184024645321915}
   - component: {fileID: 6424184024645321913}
   - component: {fileID: 6424184024645321912}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1842,6 +1862,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6424184022914712841}
   m_RootOrder: 0
@@ -1898,7 +1919,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6424184024823470262}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1915,6 +1936,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184024188815819}
   m_Father: {fileID: 6424184024847144534}
@@ -1936,7 +1958,7 @@ GameObject:
   - component: {fileID: 6424184024847144534}
   - component: {fileID: 6424184024847144535}
   - component: {fileID: 6424184024847144532}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MusicVolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1953,6 +1975,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184024410265114}
   - {fileID: 6424184024823470262}
@@ -1962,7 +1985,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 30}
+  m_AnchoredPosition: {x: 24, y: 18}
   m_SizeDelta: {x: 300, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6424184024847144535
@@ -2053,7 +2076,7 @@ GameObject:
   - component: {fileID: 6424184024864217498}
   - component: {fileID: 6424184024864217501}
   - component: {fileID: 6424184024864217500}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2070,6 +2093,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6424184024626656225}
   m_Father: {fileID: 6424184024278491232}
@@ -2139,11 +2163,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.20754719, g: 0.18287648, b: 0.18287648, a: 1}
+    m_PressedColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
+    m_SelectedColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2175,7 +2199,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 5728245550169283007, guid: 84c5626d08ba20e4aa24daae5caf1271, type: 3}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: PlaySoundFromUI
         m_Mode: 5
         m_Arguments:
@@ -2197,7 +2221,7 @@ GameObject:
   - component: {fileID: 6424184025027076956}
   - component: {fileID: 6424184025027076954}
   - component: {fileID: 6424184025027076957}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SoundText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2214,13 +2238,14 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6424184024484491281}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchoredPosition: {x: 519, y: 48}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6424184025027076954
@@ -2253,8 +2278,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sound
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 038d5d605bad48c4cbb1867aa75b463f, type: 2}
+  m_sharedMaterial: {fileID: 3805512540990800804, guid: 038d5d605bad48c4cbb1867aa75b463f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2278,8 +2303,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

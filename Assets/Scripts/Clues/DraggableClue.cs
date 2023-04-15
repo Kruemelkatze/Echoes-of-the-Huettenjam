@@ -19,6 +19,11 @@ public class DraggableClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     public string Text => tmp.text;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        gameObject.SetActive(false);
+    }
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -67,7 +72,7 @@ public class DraggableClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     public void ResetPosition()
     {
         RemoveFromPreviousBlank();
-        transform.parent = startParent;
+        transform.SetParent(startParent);
         rectTransform.anchoredPosition = startPosition;
     }
 

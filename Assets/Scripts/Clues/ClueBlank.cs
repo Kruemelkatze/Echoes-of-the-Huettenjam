@@ -1,4 +1,5 @@
 using System;
+using Extensions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,12 +12,7 @@ public class ClueBlank : MonoBehaviour, IDropHandler
 
     public bool IsFulfilled()
     {
-        return installedClue && TextRoughlyEquals(installedClue.Text, shouldBeText);
-    }
-
-    public static bool TextRoughlyEquals(string text1, string text2)
-    {
-        return text1?.ToLower().Replace(" ", "").Trim() == text2?.ToLower().Replace(" ", "").Trim();
+        return installedClue && installedClue.Text.RoughlyEquals(shouldBeText);
     }
 
     private void OnValidate()
