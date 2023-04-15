@@ -110,6 +110,11 @@ namespace UI
             uiElement.gameObject.SetActive(!uiElement.gameObject.activeSelf);
         }
 
+        public void StartGame()
+        {
+            ClueCanvas.ResetAllClueTracking();
+        }
+
         #endregion
 
         #region Private Functions

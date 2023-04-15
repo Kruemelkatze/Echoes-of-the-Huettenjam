@@ -52,6 +52,10 @@ public class GameController : Singleton<GameController>
     {
         AudioController.Instance.PlayDefaultMusic();
 
+        var clueCanvas = FindObjectOfType<ClueCanvas>(true);
+        if (clueCanvas)
+            clueUi = clueCanvas.gameObject;
+
         gameState = GameState.Starting;
 
         // Do load Stuff
