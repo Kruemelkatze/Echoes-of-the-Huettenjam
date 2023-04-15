@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,13 +47,37 @@ MonoBehaviour:
   soundClips:
     m_keys:
     - click
+    - steps_snow
+    - creaks
+    - birds
+    - door
+    - water
+    - bell_short
+    - bell_long
+    - creak_long
+    - crack
+    - shovel
+    - snow_tree
     m_values:
     - {fileID: 11400000, guid: 93e5b67dc9a65674c8eeb262b42216f7, type: 2}
+    - {fileID: 11400000, guid: b000c513e018b1f478288b73b6af802b, type: 2}
+    - {fileID: 11400000, guid: a65c448bf0c5d104eb8597095364c370, type: 2}
+    - {fileID: 11400000, guid: 55c8e1864a0eb1a419502b6474fee32e, type: 2}
+    - {fileID: 11400000, guid: 6f16dc6e0eb25f44195a1126a5c774b2, type: 2}
+    - {fileID: 11400000, guid: 7332538cb17d9ac4d8ee152f29b3e959, type: 2}
+    - {fileID: 11400000, guid: cebdbbfff6d850044882e10f2d16a123, type: 2}
+    - {fileID: 11400000, guid: f90fe751f71672848b0f494e329ea703, type: 2}
+    - {fileID: 11400000, guid: 119fc3fef3a5fd046bb01cbcf6218716, type: 2}
+    - {fileID: 11400000, guid: a21cb32d65ec6714ebb2bccf9f0e2006, type: 2}
+    - {fileID: 11400000, guid: ac522cc820164b242aa01898c3fd741e, type: 2}
+    - {fileID: 11400000, guid: 9c11ac027bb941d449c52c17f643c934, type: 2}
   musicClips:
     m_keys:
     - default
+    - scary_loop
     m_values:
-    - {fileID: 11400000, guid: 0a238bb8ca1d5a54a8b4fd988953b028, type: 2}
+    - {fileID: 0}
+    - {fileID: 11400000, guid: 134e4d7c819cd5949825a2ee1c5abb55, type: 2}
   musicVolume: 0.5
   soundVolume: 0.5
   defaultMusic: default
