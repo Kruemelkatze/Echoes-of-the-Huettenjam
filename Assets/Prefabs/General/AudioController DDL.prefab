@@ -58,6 +58,7 @@ MonoBehaviour:
     - crack
     - shovel
     - snow_tree
+    - clue
     m_values:
     - {fileID: 11400000, guid: 93e5b67dc9a65674c8eeb262b42216f7, type: 2}
     - {fileID: 11400000, guid: b000c513e018b1f478288b73b6af802b, type: 2}
@@ -71,6 +72,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a21cb32d65ec6714ebb2bccf9f0e2006, type: 2}
     - {fileID: 11400000, guid: ac522cc820164b242aa01898c3fd741e, type: 2}
     - {fileID: 11400000, guid: 9c11ac027bb941d449c52c17f643c934, type: 2}
+    - {fileID: 11400000, guid: 55c8e1864a0eb1a419502b6474fee32e, type: 2}
   musicClips:
     m_keys:
     - default
@@ -80,6 +82,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 134e4d7c819cd5949825a2ee1c5abb55, type: 2}
   musicVolume: 0.5
   soundVolume: 0.5
-  defaultMusic: default
+  defaultMusic: scary_loop
   loopMusicPerDefault: 1
   cacheAudioListener: 1
