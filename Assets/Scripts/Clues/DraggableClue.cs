@@ -67,6 +67,7 @@ public class DraggableClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     public void ResetPosition()
     {
         RemoveFromPreviousBlank();
+        transform.parent = startParent;
         rectTransform.anchoredPosition = startPosition;
     }
 

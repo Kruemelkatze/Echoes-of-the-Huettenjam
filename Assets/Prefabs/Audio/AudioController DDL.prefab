@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2128661630236844702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2128661630236844697}
+  - component: {fileID: 2128661630236844696}
+  m_Layer: 0
+  m_Name: AudioController DDL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2128661630236844697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128661630236844702}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2128661630236844696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128661630236844702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695280ac2705d4d49a1018e43194b24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundClips:
+    m_keys:
+    - click
+    - steps_snow
+    - creaks
+    - birds
+    - door
+    - water
+    - bell_short
+    - bell_long
+    - creak_long
+    - crack
+    - shovel
+    - snow_tree
+    m_values:
+    - {fileID: 11400000, guid: 93e5b67dc9a65674c8eeb262b42216f7, type: 2}
+    - {fileID: 11400000, guid: b000c513e018b1f478288b73b6af802b, type: 2}
+    - {fileID: 11400000, guid: a65c448bf0c5d104eb8597095364c370, type: 2}
+    - {fileID: 11400000, guid: 55c8e1864a0eb1a419502b6474fee32e, type: 2}
+    - {fileID: 11400000, guid: 6f16dc6e0eb25f44195a1126a5c774b2, type: 2}
+    - {fileID: 11400000, guid: 7332538cb17d9ac4d8ee152f29b3e959, type: 2}
+    - {fileID: 11400000, guid: cebdbbfff6d850044882e10f2d16a123, type: 2}
+    - {fileID: 11400000, guid: f90fe751f71672848b0f494e329ea703, type: 2}
+    - {fileID: 11400000, guid: 119fc3fef3a5fd046bb01cbcf6218716, type: 2}
+    - {fileID: 11400000, guid: a21cb32d65ec6714ebb2bccf9f0e2006, type: 2}
+    - {fileID: 11400000, guid: ac522cc820164b242aa01898c3fd741e, type: 2}
+    - {fileID: 11400000, guid: 9c11ac027bb941d449c52c17f643c934, type: 2}
+  musicClips:
+    m_keys:
+    - default
+    m_values:
+    - {fileID: 0}
+  musicVolume: 0.5
+  soundVolume: 0.5
+  defaultMusic: default
+  loopMusicPerDefault: 1
+  cacheAudioListener: 1
