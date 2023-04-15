@@ -9,6 +9,8 @@ public class Clue : MonoBehaviour
     [SerializeField] private bool canBeInteractedWith = true;
     [SerializeField] private string clueName;
 
+    [SerializeField] private DraggableClue quicklySetCorrectClue;
+
     private bool _lookedAt;
 
     public bool LookedAt
@@ -28,6 +30,12 @@ public class Clue : MonoBehaviour
 
     private void OnValidate()
     {
+        if (quicklySetCorrectClue)
+        {
+            clueName = quicklySetCorrectClue.Text;
+            quicklySetCorrectClue = null;
+        }
+
         var outline = GetComponent<Outline>();
 
         if (!outline)

@@ -630,6 +630,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2164932959932209792, guid: 53dacfd6687eb8c4f8411fcd36e49e1c, type: 3}
   m_PrefabInstance: {fileID: 1142843694}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &154294578 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4947644302583677923, guid: deffd125726c71f4b8dac254db9d5d9a, type: 3}
+  m_PrefabInstance: {fileID: 592547572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &184129265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -753,6 +758,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6889034052587994547, guid: cd6ac018d35aaca468de402a74934851, type: 3}
   m_PrefabInstance: {fileID: 198750204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &206204508 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5201095254641470425, guid: b30de0274a82bc84ca1586343f79620c, type: 3}
+  m_PrefabInstance: {fileID: 603603563}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &239198672 stripped
 Transform:
@@ -1455,6 +1465,39 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &363505518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363505515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6da486cef0d6b45bc41540b89f40c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
+  clueName: on the couch
+  quicklySetCorrectClue: {fileID: 0}
+--- !u!114 &363505519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363505515}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.2029252, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &369330250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2619,6 +2662,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5756234652076218713, guid: deffd125726c71f4b8dac254db9d5d9a, type: 3}
   m_PrefabInstance: {fileID: 592547572}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &592547577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154294578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6da486cef0d6b45bc41540b89f40c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
+  clueName: a sawed log
+  quicklySetCorrectClue: {fileID: 0}
+--- !u!114 &592547578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154294578}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.2029252, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &603603563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2681,6 +2757,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4856516743489630563, guid: b30de0274a82bc84ca1586343f79620c, type: 3}
   m_PrefabInstance: {fileID: 603603563}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &603603566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206204508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6da486cef0d6b45bc41540b89f40c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
+  clueName: a blow to her head
+  quicklySetCorrectClue: {fileID: 0}
+--- !u!114 &603603567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206204508}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.2029252, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &615561328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3005,6 +3114,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5756234652076218713, guid: deffd125726c71f4b8dac254db9d5d9a, type: 3}
   m_PrefabInstance: {fileID: 2072503202}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &667510561 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5201095254641470425, guid: b30de0274a82bc84ca1586343f79620c, type: 3}
+  m_PrefabInstance: {fileID: 1931717598}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &668112899 stripped
 Transform:
@@ -3703,6 +3817,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8671613132616174524, guid: aecc33a31b85a2c488417a88e9ae2c40, type: 3}
   m_PrefabInstance: {fileID: 865395984}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &867694383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1144484765499640126, guid: 7a81b66e825685d4f86a701f2c000dab, type: 3}
+  m_PrefabInstance: {fileID: 1464351980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &869744599
 GameObject:
   m_ObjectHideFlags: 0
@@ -4298,11 +4417,82 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b297da630e55c3345afee2132ff4104b, type: 3}
+--- !u!1 &1027952911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7853560791989153502, guid: 936729fe96a8b414ca691512f7b963c9, type: 3}
+  m_PrefabInstance: {fileID: 552614552}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1027952913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027952911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6da486cef0d6b45bc41540b89f40c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
+  clueName: doodled on his face
+  quicklySetCorrectClue: {fileID: 0}
+--- !u!114 &1027952914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027952911}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.2029252, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &1032634897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 336035458113049476, guid: 7a81b66e825685d4f86a701f2c000dab, type: 3}
   m_PrefabInstance: {fileID: 1464351980}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1032634898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867694383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6da486cef0d6b45bc41540b89f40c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
+  clueName: the hot sauna
+  quicklySetCorrectClue: {fileID: 0}
+--- !u!114 &1032634899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867694383}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.2029252, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1053848663
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4436,6 +4626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeInteractedWith: 1
   clueName: 
+  quicklySetCorrectClue: {fileID: 0}
 --- !u!114 &1058358215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4715,6 +4906,44 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6889034052587994547, guid: cd6ac018d35aaca468de402a74934851, type: 3}
   m_PrefabInstance: {fileID: 1135006707}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1137738167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7375788830067852213, guid: 0aeb53d7758fb65458b3b2fbe024defe, type: 3}
+  m_PrefabInstance: {fileID: 510429940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1137738171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137738167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6da486cef0d6b45bc41540b89f40c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
+  clueName: the burning oven
+  quicklySetCorrectClue: {fileID: 0}
+--- !u!114 &1137738172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137738167}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.2029252, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1142843694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4929,6 +5158,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5756234652076218713, guid: deffd125726c71f4b8dac254db9d5d9a, type: 3}
   m_PrefabInstance: {fileID: 1193719380}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1194846750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4615869722578786314, guid: c7869a11c9b9ec84591fa5c339328166, type: 3}
+  m_PrefabInstance: {fileID: 4021718289508428744}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1205560961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6889034052587994547, guid: cd6ac018d35aaca468de402a74934851, type: 3}
@@ -5053,6 +5287,44 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5756234652076218713, guid: deffd125726c71f4b8dac254db9d5d9a, type: 3}
   m_PrefabInstance: {fileID: 1237185758}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1237267553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3748818773939041855, guid: 5c187891992cd624983bb62dd37e668e, type: 3}
+  m_PrefabInstance: {fileID: 436559614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1237267557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237267553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6da486cef0d6b45bc41540b89f40c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
+  clueName: a defaced goat
+  quicklySetCorrectClue: {fileID: 0}
+--- !u!114 &1237267558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237267553}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.2029252, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1237932709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6078,6 +6350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2090b501d8124ad4fb0c344afdfb821f, type: 3}
+--- !u!1 &1509182023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 286350326641166210, guid: 59dd5033bb8a48f4da91e5bd847f8727, type: 3}
+  m_PrefabInstance: {fileID: 1600960772761620214}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1566052332
 GameObject:
   m_ObjectHideFlags: 0
@@ -7412,7 +7689,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gameDurationS: 90
+  gameDurationS: 190
   gameTimeMesh: {fileID: 1633679896}
 --- !u!1 &1893112907
 GameObject:
@@ -7644,6 +7921,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4856516743489630563, guid: b30de0274a82bc84ca1586343f79620c, type: 3}
   m_PrefabInstance: {fileID: 1931717598}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1931717601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667510561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6da486cef0d6b45bc41540b89f40c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
+  clueName: the playground slide
+  quicklySetCorrectClue: {fileID: 0}
+--- !u!114 &1931717602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667510561}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.2029252, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1946817364
 GameObject:
   m_ObjectHideFlags: 0
@@ -7780,6 +8090,39 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &1947625213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947625211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6da486cef0d6b45bc41540b89f40c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
+  clueName: the banana
+  quicklySetCorrectClue: {fileID: 0}
+--- !u!114 &1947625214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947625211}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.2029252, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1949812887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7837,6 +8180,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd6ac018d35aaca468de402a74934851, type: 3}
+--- !u!1 &1960283774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7740093240263728551, guid: af522e2fe7b92064db766a8e91077ced, type: 3}
+  m_PrefabInstance: {fileID: 833657127353085493}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1971429574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3627517549969058466, guid: f48704090964b28448c11f926208bf34, type: 3}
@@ -9049,6 +9397,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 626707017535577400, guid: 59dd5033bb8a48f4da91e5bd847f8727, type: 3}
   m_PrefabInstance: {fileID: 1600960772761620214}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2199238628460811216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509182023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6da486cef0d6b45bc41540b89f40c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
+  clueName: the sauna oils
+  quicklySetCorrectClue: {fileID: 0}
+--- !u!114 &2199238628460811217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509182023}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.2029252, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &3851035443344642375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9103,6 +9484,10 @@ PrefabInstance:
     - target: {fileID: 3486506252199204433, guid: 60bb299be51181347abe57a001e4b54e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486506252199204435, guid: 60bb299be51181347abe57a001e4b54e, type: 3}
+      propertyPath: walkSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3486506252199204435, guid: 60bb299be51181347abe57a001e4b54e, type: 3}
       propertyPath: highlightDistance
@@ -9344,8 +9729,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6926964381597173533, guid: af522e2fe7b92064db766a8e91077ced, type: 3}
   m_PrefabInstance: {fileID: 833657127353085493}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7759767965527468330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960283774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6da486cef0d6b45bc41540b89f40c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
+  clueName: a hot coffee
+  quicklySetCorrectClue: {fileID: 0}
+--- !u!114 &7759767965527468331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960283774}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.2029252, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &8977097769981127032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5423756316168045232, guid: c7869a11c9b9ec84591fa5c339328166, type: 3}
   m_PrefabInstance: {fileID: 4021718289508428744}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8977097769981127034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194846750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e6da486cef0d6b45bc41540b89f40c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBeInteractedWith: 1
+  clueName: her feet
+  quicklySetCorrectClue: {fileID: 0}
+--- !u!114 &8977097769981127035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194846750}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0.2029252, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

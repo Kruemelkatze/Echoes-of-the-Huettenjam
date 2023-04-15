@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using General;
 using UnityEngine;
 
 public class Appear : MonoBehaviour
@@ -16,6 +17,13 @@ public class Appear : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        
+        var clueCanvas = Hub.Get<ClueCanvas>();
+        if (clueCanvas)
+        {
+            Hub.Unregister<ClueCanvas>();
+            Destroy(clueCanvas.gameObject);
+        }
         
         if (canvasGroup)
         {
