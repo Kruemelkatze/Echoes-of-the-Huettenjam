@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
   m_Name: scary_loop
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: e1e0a9ad9ed3ce6429aaf6459ca1b0fc, type: 3}
+  audioClip: {fileID: 8300000, guid: c19a7a9ba0c55164e85d5a7d236cf0bd, type: 3}
   audioClips: []
   subtitle: 
   loop: 1
-  volume: 2
+  volume: 3
   pitch: 1
   volumeVariation: 0
   pitchVariation: 0
