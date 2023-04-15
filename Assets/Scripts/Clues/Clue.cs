@@ -47,6 +47,7 @@ public class Clue : MonoBehaviour
         canBeInteractedWith = false;
         LookedAt = false;
         Unlock();
+        AudioController.Instance.PlaySound("clue");
     }
 
     private void Unlock()

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b2e8d52098088b4d940bcb2514658b7, type: 3}
-  m_Name: birds
+  m_Name: mellow_loop
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 90b9b99187647024f97ef3a2f602831d, type: 3}
+  audioClip: {fileID: 8300000, guid: be4f56c8b7c96f345a5861a87387d817, type: 3}
   audioClips: []
   subtitle: 
   loop: 0
-  volume: 2
+  volume: 1
   pitch: 1
   volumeVariation: 0
   pitchVariation: 0

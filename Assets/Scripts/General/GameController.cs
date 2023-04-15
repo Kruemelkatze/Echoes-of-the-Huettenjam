@@ -23,6 +23,7 @@ public class GameController : Singleton<GameController>
     [SerializeField] private TextMeshProUGUI gameTimeMesh;
     float gameTimer = 0.0f;
     private bool hasTriggeredRespawnOnce = false;
+    private bool hasTriggeredBellOnce = false;
     private bool hasStartedMoving = false;
 
     public GameState GameState => gameState;
@@ -48,9 +49,45 @@ public class GameController : Singleton<GameController>
         }
     }
 
+    private static int musicIndex = 0;
+    private static int ambienceIndex = 0;
+
     private void Start()
     {
         AudioController.Instance.PlayDefaultMusic();
+
+        switch (musicIndex)
+        {
+            case 0:
+                AudioController.Instance.PlayDefaultMusic();
+                break;
+            case 1:
+                AudioController.Instance.PlaySound("scary_loop");
+                break;
+            default:
+                AudioController.Instance.PlayDefaultMusic();
+                break;
+        }
+
+        musicIndex = (musicIndex + 1) % 2;
+
+        var loopOptions = new AudioController.AudioOptions()
+        {
+            Loop = true,
+        };
+        switch (ambienceIndex)
+        {
+            case 0:
+                AudioController.Instance.PlaySound("ambience1", loopOptions);
+                break;
+            case 1:
+                AudioController.Instance.PlaySound("ambience2", loopOptions);
+                break;
+            default:
+                break;
+        }
+
+        ambienceIndex = (ambienceIndex + 1) % 2;
 
         var clueCanvas = FindObjectOfType<ClueCanvas>(true);
         if (clueCanvas)
@@ -143,6 +180,12 @@ public class GameController : Singleton<GameController>
         if (_vignette)
         {
             _vignette.intensity.value = vignetteAnimationCurve.Evaluate(gameTimer / gameDurationS);
+        }
+
+        if (!hasTriggeredBellOnce && (seconds >= gameDurationS - 3))
+        {
+            AudioController.Instance.PlaySound("bell_long");
+            hasTriggeredBellOnce = true;
         }
 
         if (!hasTriggeredRespawnOnce && (seconds >= gameDurationS))
