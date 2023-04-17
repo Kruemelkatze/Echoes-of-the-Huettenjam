@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using General;
+using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
@@ -14,25 +16,37 @@ public class AutomaticCanvasScale : MonoBehaviour
     [SerializeField] private float width = 1920f;
     [SerializeField] private float height = 1080f;
 
+    private double _previousAspect = -1;
+
     private enum ScreenOrientation
     {
         Horizontal,
         Vertical
     }
-    
-        /* ======================================================================================================================== */
+
+    /* ======================================================================================================================== */
     /* UNITY CALLBACKS                                                                                                          */
     /* ======================================================================================================================== */
 
-    private void Start ()
+    private void Start()
     {
         SetScaleMode();
     }
-    
+
+    private void Update()
+    {
+        var aspect = Math.Round((float)Screen.width / Screen.height, 4);
+        if (Math.Abs(_previousAspect - aspect) > Constants.Values.Epsilon)
+        {
+            _previousAspect = aspect;
+            SetScaleMode();
+        }
+    }
+
     /* ======================================================================================================================== */
     /* PRIVATE FUNCTIONS                                                                                                        */
     /* ======================================================================================================================== */
-    
+
     /* ======================================================================================================================== */
     /* PRIVATE FUNCTIONS                                                                                                        */
     /* ======================================================================================================================== */
@@ -42,7 +56,7 @@ public class AutomaticCanvasScale : MonoBehaviour
         CanvasScaler canvasScaler = GetComponent<CanvasScaler>();
         canvasScaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
         canvasScaler.referenceResolution = new Vector2(width, height);
-        
+
         float ratio = 0f;
         float defaultRatio = 0f;
 
@@ -76,5 +90,4 @@ public class AutomaticCanvasScale : MonoBehaviour
     /* ======================================================================================================================== */
     /* EVENT LISTENERS                                                                                                          */
     /* ======================================================================================================================== */
-
 }
