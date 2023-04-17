@@ -1,8 +1,11 @@
+using Clues;
+using General;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DraggableClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class DraggableClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerEnterHandler,
+    IPointerExitHandler
 {
     [SerializeField] private TextMeshProUGUI tmp;
     private Vector3 startPosition;
@@ -16,6 +19,8 @@ public class DraggableClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     public bool IgnoreDrop { get; set; }
 
     public string Text => tmp.text;
+
+    [SerializeField] private string tooltipText;
 
     // Start is called before the first frame update
     private void Awake()
@@ -44,6 +49,10 @@ public class DraggableClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
 
         transform.SetParent(startParent);
         canvas = GetComponentInParent<Canvas>();
+
+        var tooltip = Hub.Get<ClueTooltip>();
+        if (tooltip)
+            tooltip.SetActive(false);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -82,5 +91,22 @@ public class DraggableClue : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
             InstalledIn.Remove(this);
             InstalledIn = null;
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        var tooltip = Hub.Get<ClueTooltip>();
+        if (tooltip && !string.IsNullOrEmpty(tooltipText))
+        {
+            var halfHeight = rectTransform.rect.height / 1080 * Screen.height * 0.9f;
+            tooltip.SetText(tooltipText, transform.position + Vector3.up * halfHeight);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        var tooltip = Hub.Get<ClueTooltip>();
+        if (tooltip)
+            tooltip.SetActive(false);
     }
 }
