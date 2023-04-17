@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -46,6 +47,8 @@ public class FirstPersonController : MonoBehaviour
 
     [SerializeField] private float highlightDistance = 6.0f;
 
+    [SerializeField] private CanvasGroup clueUnlockedUi;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -57,6 +60,9 @@ public class FirstPersonController : MonoBehaviour
         Cursor.visible = false;
 
         _headbobEnabled = PlayerPrefs.GetInt("headbob", 1) == 1;
+
+        if (clueUnlockedUi)
+            clueUnlockedUi.alpha = 0;
     }
 
     // Update is called once per frame
@@ -203,6 +209,14 @@ public class FirstPersonController : MonoBehaviour
         if (!isPressingInteract)
             return;
 
-        _previousLookedAtClue.Interact();
+        if (_previousLookedAtClue.Interact() && clueUnlockedUi)
+        {
+            // Fade sequence
+            var sequence = DOTween.Sequence();
+            sequence.Append(clueUnlockedUi.DOFade(1, 0.5f));
+            sequence.AppendInterval(1.5f);
+            sequence.Append(clueUnlockedUi.DOFade(0, 0.5f));
+            sequence.Play();
+        }
     }
 }

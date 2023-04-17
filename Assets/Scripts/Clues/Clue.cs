@@ -47,16 +47,17 @@ public class Clue : MonoBehaviour
         outline.OutlineMode = Outline.Mode.OutlineVisible;
     }
 
-    public virtual void Interact()
+    public virtual bool Interact()
     {
         if (!canBeInteractedWith)
-            return;
+            return false;
 
         canBeInteractedWith = false;
         LookedAt = false;
         DisableLight();
         Unlock();
         AudioController.Instance.PlaySound("clue");
+        return true;
     }
 
     private void Unlock()

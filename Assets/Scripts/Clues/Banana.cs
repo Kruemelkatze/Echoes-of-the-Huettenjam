@@ -4,8 +4,9 @@ using UnityEngine;
 [RequireComponent(typeof(Outline))]
 public class Banana : Clue
 {
-    public override void Interact()
+    public override bool Interact()
     {
         Hub.Get<ClueCanvas>().Win();
+        return true;
     }
 }
