@@ -42,6 +42,8 @@ public class FirstPersonController : MonoBehaviour
     private GameObject _previousLookedAtObject = null;
     private Clue _previousLookedAtClue = null;
 
+    private bool _headbobEnabled = true;
+
     [SerializeField] private float highlightDistance = 6.0f;
 
 
@@ -53,6 +55,8 @@ public class FirstPersonController : MonoBehaviour
         bobDefaultYPos = playerCamera.transform.localPosition.y;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        _headbobEnabled = PlayerPrefs.GetInt("headbob", 1) == 1;
     }
 
     // Update is called once per frame
@@ -87,11 +91,15 @@ public class FirstPersonController : MonoBehaviour
         {
             bobTimer += Time.deltaTime * walkBobSpeed;
             // Debug.Log(Mathf.Sin(bobTimer));
-            playerCamera.transform.localPosition = new Vector3(
-                playerCamera.transform.localPosition.x,
-                bobDefaultYPos + Mathf.Sin(bobTimer) * walkBobAmount,
-                playerCamera.transform.localPosition.z
-            );
+
+            if (_headbobEnabled)
+            {
+                playerCamera.transform.localPosition = new Vector3(
+                    playerCamera.transform.localPosition.x,
+                    bobDefaultYPos + Mathf.Sin(bobTimer) * walkBobAmount,
+                    playerCamera.transform.localPosition.z
+                );
+            }
 
             // player steps:
             if (Mathf.Sin(bobTimer) <= -0.99f && !stepTaken)

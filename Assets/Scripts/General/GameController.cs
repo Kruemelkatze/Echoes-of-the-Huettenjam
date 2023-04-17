@@ -33,6 +33,8 @@ public class GameController : Singleton<GameController>
     private Volume _volume;
     private Vignette _vignette;
 
+    private bool _freezingTimerActive = true;
+
     private void Awake()
     {
         _volume = FindObjectOfType<Volume>();
@@ -43,6 +45,8 @@ public class GameController : Singleton<GameController>
 
         if (gameTimeMesh)
             gameTimeMesh.text = "";
+
+        _freezingTimerActive = PlayerPrefs.GetInt("freezingtimer", 1) == 1;
         if (!ThisIsTheSingletonInstance())
         {
             return;
@@ -157,6 +161,9 @@ public class GameController : Singleton<GameController>
         if (!hasStartedMoving && firstPersonController.isMoving) hasStartedMoving = true;
 
         if (!hasStartedMoving) return;
+
+        if (!_freezingTimerActive)
+            return;
 
         gameTimer += Time.deltaTime;
         int seconds = (int)gameTimer;

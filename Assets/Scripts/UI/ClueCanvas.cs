@@ -45,4 +45,19 @@ public class ClueCanvas : MonoBehaviour
             Destroy(canvas.gameObject);
         }
     }
+    
+    public void Continue()
+    {
+        GameController.Instance.ContinueGame();
+    }
+
+    public void Restart()
+    {
+        SceneController.Instance.RestartScene(true);
+    }
+
+    public void BackToMenu()
+    {
+        SceneController.Instance.LoadScene("MainMenu");
+    }
 }

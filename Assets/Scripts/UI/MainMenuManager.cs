@@ -38,6 +38,10 @@ namespace UI
 
         private List<ButtonFuncTuple> _registeredCallbacks;
 
+        [SerializeField] private Toggle headbobToggle;
+        [SerializeField] private Toggle freezingTimerToggle;
+
+
         private void Start()
         {
             if (music != null)
@@ -56,6 +60,16 @@ namespace UI
             {
                 Hub.Unregister<ClueCanvas>();
                 Destroy(clueCanvas.gameObject);
+            }
+
+            if (headbobToggle)
+            {
+                headbobToggle.isOn = PlayerPrefs.GetInt("headbob", 1) == 1;
+            }
+
+            if (freezingTimerToggle)
+            {
+                freezingTimerToggle.isOn = PlayerPrefs.GetInt("freezingtimer", 1) == 1;
             }
         }
 
@@ -124,6 +138,18 @@ namespace UI
         public void StartGame()
         {
             ClueCanvas.ResetAllClueTracking();
+        }
+
+        public void ToggleHeadbob(bool value)
+        {
+            PlayerPrefs.SetInt("headbob", value ? 1 : 0);
+            PlayerPrefs.Save();
+        }
+
+        public void ToggleFreezingTimer(bool value)
+        {
+            PlayerPrefs.SetInt("freezingtimer", value ? 1 : 0);
+            PlayerPrefs.Save();
         }
 
         #endregion
