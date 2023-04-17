@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Clues;
 using General;
 using UnityEngine;
 
@@ -18,6 +19,13 @@ public class ClueCanvas : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             Hub.Register(this);
         }
+    }
+
+    private void OnEnable()
+    {
+        var tooltip = Hub.Get<ClueTooltip>();
+        if (tooltip)
+            tooltip.SetActive(false);
     }
 
     public void CheckCompletion()
@@ -45,7 +53,7 @@ public class ClueCanvas : MonoBehaviour
             Destroy(canvas.gameObject);
         }
     }
-    
+
     public void Continue()
     {
         GameController.Instance.ContinueGame();

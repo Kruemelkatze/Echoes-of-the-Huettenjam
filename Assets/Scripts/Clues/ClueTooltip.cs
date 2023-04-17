@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using General;
 using TMPro;
 using UnityEngine;
@@ -12,6 +13,14 @@ namespace Clues
 
         private void Awake()
         {
+            var anyExisting = FindObjectsOfType<ClueTooltip>(true).Any(x => x.gameObject != gameObject);
+
+            if (anyExisting)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
             Hub.Register(this);
             rectTransform = rectTransform ? rectTransform : GetComponent<RectTransform>();
             SetActive(false);
@@ -38,7 +47,10 @@ namespace Clues
         public void SetActive(bool active)
         {
             rectTransform.gameObject.SetActive(active);
-            StartCoroutine(FadeInWithDelay());
+            if (active)
+            {
+                StartCoroutine(FadeInWithDelay());
+            }
         }
 
         private IEnumerator FadeInWithDelay()
