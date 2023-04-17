@@ -54,6 +54,7 @@ public class Clue : MonoBehaviour
 
         canBeInteractedWith = false;
         LookedAt = false;
+        DisableLight();
         Unlock();
         AudioController.Instance.PlaySound("clue");
     }
@@ -81,6 +82,14 @@ public class Clue : MonoBehaviour
         {
             canBeInteractedWith = false;
             LookedAt = false;
+            DisableLight();
         }
+    }
+
+    private void DisableLight()
+    {
+        var l = GetComponentInChildren<Light>();
+        if (l)
+            l.enabled = false;
     }
 }
